@@ -57,7 +57,7 @@ static inline double
 a_inf(double V, double thetaa, double sigmaa)
 {
     //ainf(v)=1/(1+exp(-(v-thetaa)/sigmaa))
-    return 1.0/(1.0+exp(-(V - thetaa))/sigmaa);
+    return 1.0/(1.0+exp(-(V - thetaa)/sigmaa));
 }
 
 static inline double
@@ -249,7 +249,7 @@ void Alison_Neuron_12_7_18::initParameters() {
     G_Na_max = 0.24;
     G_K_max = 0.011;
     G_L = 0.0018;
-    G_A_max = 0.3;
+    G_A_max = 0.012;
     E_Na = 50.0; // mV
     E_K = -100.0;
     E_L = -59.5;
@@ -271,7 +271,7 @@ void Alison_Neuron_12_7_18::initParameters() {
     h = 0.8522;
     n = 0.000208;
     a = a_inf(V0, thetaa, sigmaa);
-    b = 0.47;
+    b = b_inf(V0, thetab, sigmab);
     count = 0;
     systime = 0;
     period = RT::System::getInstance()->getPeriod() * 1e-6; // ms
