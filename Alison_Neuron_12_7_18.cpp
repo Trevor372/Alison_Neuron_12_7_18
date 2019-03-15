@@ -257,8 +257,8 @@ void Alison_Neuron_12_7_18::initParameters() {
     Iapp = 0.0; // 1 Hz spiking
     rate = 400;
     taua = 2.0;
-    taub = 140.0;
-    thetaa = -52.3;
+    taub = 135.9;
+    thetaa = -52;
     thetab = -79.0;
     sigmaa = 22.3;
     sigmab = -3.0;	
